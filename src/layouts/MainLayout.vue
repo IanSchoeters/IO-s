@@ -12,9 +12,9 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/page1" label="Search" />
-        <q-route-tab to="/page2" label="All" />
-        <q-route-tab to="/page3" label="Deleted" />
+        <q-route-tab to="/" label="Search" />
+        <q-route-tab to="/All" label="All" />
+        <q-route-tab to="/Deleted" label="Deleted" />
       </q-tabs>
     </q-header>
 

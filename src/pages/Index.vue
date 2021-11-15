@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <input type="text" placeholder="190190" />
+    <input type="text" placeholder="1901010" />
     <button>SEARCH</button>
     <input-component />
   </div>
@@ -8,7 +8,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import InputComponent from 'src/components/InputComponent.vue';
 import InputComponent from 'src/components/InputComponent.vue';
 
 export default defineComponent({
