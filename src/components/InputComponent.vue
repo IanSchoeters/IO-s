@@ -1,27 +1,65 @@
 <template>
-  <form action="">
-    <input type="text" placeholder="inkooporder" />
-    <input type="text" placeholder="lijnnr" />
-    <input type="text" placeholder="artikel" />
-    <input type="text" placeholder="naam" />
-    <input type="date" />
-    <span>timestamp today</span>
+  <form @submit.prevent="addNewIo(newIo)">
+    <input type="text" placeholder="IO" v-model="newIo.io" />
+    <input type="text" placeholder="lijnnummer" v-model="newIo.linenumber" />
+    <input type="text" placeholder="artikel" v-model="newIo.article" />
+    <input type="text" placeholder="naam gebruiker" v-model="newIo.username" />
+    <input type="date" v-model="newIo.dateToday" />
+    <input type="text" placeholder="leverancier" v-model="newIo.supplier" />
+    <input
+      type="text"
+      placeholder="tel leverancier"
+      v-model="newIo.phoneSupplier"
+    />
+    <input type="date" v-model="newIo.deliveryDate" />
+    <button>toevoegen</button>
   </form>
+
+  <div>{{ newIo.io }}</div>
+  <div>{{ newIo.linenumber }}</div>
+  <div>{{ newIo.article }}</div>
+  <div>{{ newIo.username }}</div>
+  <div>{{ newIo.dateToday }}</div>
+  <div>{{ newIo.supplier }}</div>
+  <div>{{ newIo.phoneSupplier }}</div>
+  <div>{{ newIo.deliveryDate }}</div>
+
+  <div>{{ ios }}</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, Ref, ref } from 'vue';
+import { Io } from 'src/components/models';
+import { useIos } from 'src/components/io.service';
 
 export default defineComponent({
   name: 'InputComponent',
+  setup() {
+    const newIo: Ref<Io> = ref(<Io>{});
+    const { ios } = useIos();
+
+    function addNewIo(newIo: Io) {
+      ios.value.push(newIo);
+      // id toekennen en ophogen      
+    };
+
+    return { newIo, addNewIo, ios };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 form {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 input {
-  margin-right: 1em;
+  margin-right: 3px;
+}
+button {
+  margin-right: 3px;
+}
+div {
+  display: inline-block;
+  margin: 59px;
 }
 </style>
