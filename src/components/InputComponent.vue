@@ -4,7 +4,7 @@
     <input type="text" placeholder="lijnnummer" v-model="newIo.linenumber" />
     <input type="text" placeholder="artikel" v-model="newIo.article" />
     <input type="text" placeholder="naam gebruiker" v-model="newIo.username" />
-    <input type="date" v-model="newIo.dateToday" />
+    <input type="date" placeholder="datum vandaag" v-model="newIo.dateToday" />
     <input type="text" placeholder="leverancier" v-model="newIo.supplier" />
     <input
       type="text"
@@ -35,13 +35,16 @@ import { useIos } from 'src/components/io.service';
 export default defineComponent({
   name: 'InputComponent',
   setup() {
-    const newIo: Ref<Io> = ref(<Io>{});
+    const newIo: Ref<Io> = ref(<Io>{
+      dateToday: '2021-11-30'
+    });
     const { ios } = useIos();
 
     function addNewIo(newIo: Io) {
-      ios.value.push(newIo);
-      // id toekennen en ophogen      
-    };
+      ios.value.push({ ...newIo });
+      // array maken van elke io om meerder lijnen te kunnen toevoegen
+      // new Date().toLocaleDateString()
+    }
 
     return { newIo, addNewIo, ios };
   },

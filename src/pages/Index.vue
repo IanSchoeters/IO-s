@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <input type="text" placeholder="1901010" />
-    <button>SEARCH</button>
+    <button>zoeken</button>
     <input-component />
   </div>
 </template>

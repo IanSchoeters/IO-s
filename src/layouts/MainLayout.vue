@@ -26,7 +26,7 @@
       <q-toolbar>
         <q-toolbar-title>
          
-          <div>Contact 'mail'</div>
+          <div>contact</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

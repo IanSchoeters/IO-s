@@ -8,7 +8,6 @@ export interface Meta {
 }
 
 export interface Io {
-  id: number;
   io: number;
   linenumber: number;
   article: string;
