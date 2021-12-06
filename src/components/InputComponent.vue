@@ -15,16 +15,8 @@
     <button>toevoegen</button>
   </form>
 
-  <div>{{ newIo.io }}</div>
-  <div>{{ newIo.linenumber }}</div>
-  <div>{{ newIo.article }}</div>
-  <div>{{ newIo.username }}</div>
   <div>{{ newIo.dateToday }}</div>
-  <div>{{ newIo.supplier }}</div>
-  <div>{{ newIo.phoneSupplier }}</div>
-  <div>{{ newIo.deliveryDate }}</div>
-
-  <div>{{ ios }}</div>
+ 
 </template>
 
 <script lang="ts">
