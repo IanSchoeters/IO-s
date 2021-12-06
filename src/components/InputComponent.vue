@@ -36,14 +36,13 @@ export default defineComponent({
   name: 'InputComponent',
   setup() {
     const newIo: Ref<Io> = ref(<Io>{
-      dateToday: '2021-11-30'
+      dateToday: '2021-11-30',
+      // new Date().toLocaleDateString()
     });
     const { ios } = useIos();
 
     function addNewIo(newIo: Io) {
       ios.value.push({ ...newIo });
-      // array maken van elke io om meerder lijnen te kunnen toevoegen
-      // new Date().toLocaleDateString()
     }
 
     return { newIo, addNewIo, ios };
